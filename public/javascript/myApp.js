@@ -25,4 +25,12 @@ myApp.controller('AppCtrl', [
     });       // this sends our data to the database
   };
 
+  $scope.remove = function(id) {
+    console.log(id);
+    $http.delete('/contactlist/' + id).success(function(resonse) {
+      refresh();
+    })
+
+  };
+
 }]);
